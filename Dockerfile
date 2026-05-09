@@ -12,5 +12,5 @@ RUN dotnet publish "ZapataLibraryNowAPI/ZapataLibraryNowAPI.csproj" -c Release -
 
 FROM base AS final
 WORKDIR /app
-COPY --from=build /app/out
+COPY --from=build /app/out .
 ENTRYPOINT ["dotnet", "ZapataLibraryNowAPI.dll"]
